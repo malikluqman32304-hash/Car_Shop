@@ -1,8 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 import os
-
-app = Flask(__name__)
 app.secret_key = "secret123"
 DB = "cars.db"
 
@@ -92,5 +89,3 @@ def delete_car(car_id):
     conn.close()
     flash("Car deleted successfully!", "danger")
     return redirect(url_for("index"))
-
-
